@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.pipeworx-io/tx-medical-exclusions",
   "title": "Tx Medical Exclusions",
-  "description": "Texas HHSC Office of Inspector General (OIG) Medicaid Provider Exclusions",
-  "version": "0.1.0",
+  "description": "Texas HHSC Office of Inspector General (OIG) Medicaid Provider Exclusions Database screening…",
+  "version": "0.1.1",
   "websiteUrl": "https://pipeworx.io/packs/tx-medical-exclusions",
   "repository": {
     "url": "https://github.com/pipeworx-io/mcp-tx-medical-exclusions",

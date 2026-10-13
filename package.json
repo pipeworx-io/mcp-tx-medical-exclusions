@@ -1,7 +1,7 @@
 {
   "name": "@pipeworx/mcp-tx-medical-exclusions",
-  "version": "0.1.0",
-  "description": "Texas HHSC Office of Inspector General (OIG) Medicaid Provider Exclusions",
+  "version": "0.1.1",
+  "description": "Texas HHSC Office of Inspector General (OIG) Medicaid Provider Exclusions Database screening — fleet #2809, the third state exclusion pack after mcps/ny-omig-exclusions (#2788) and mcps/ca-medical-exclusions (#2805).",
   "type": "module",
   "main": "src/index.ts",
   "types": "src/index.ts",
@@ -26,7 +26,7 @@
     "@cloudflare/workers-types": "^4.20260405.1"
   },
   "pipeworx": {
-    "sourceHash": "v1-768b52ae613a624b085876722a92ecdbaefa674ac1b9bfbc165a1acbb921ef55",
-    "sourceCommit": "3d8d9f09e39ebb175a9e41fffd8601eeddcf10a4"
+    "sourceHash": "v1-3f8c985161e0b87d55310a03913fa265486b88e47535cea695702b0dbd47c624",
+    "sourceCommit": "3723e46c6d115bd4a1fd2175e6bf758555e7cb50"
   }
 }
