@@ -11,7 +11,7 @@ import * as bakedIndexModule from './tx-oig-index-data.js';
 const bakedIndex = Object.fromEntries(Object.entries(bakedIndexModule));
 
 const server = new Server(
-  { name: '@pipeworx/mcp-tx-medical-exclusions', version: '0.1.1' },
+  { name: '@pipeworx/mcp-tx-medical-exclusions', version: '0.1.2' },
   { capabilities: { tools: {} } },
 );
 
