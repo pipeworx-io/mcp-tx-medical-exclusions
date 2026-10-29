@@ -1,0 +1,35 @@
+[
+  {
+    "name": "tx_medical_check_exclusion",
+    "description": "Is this healthcare provider excluded from the Texas Medicaid program? Screens a person or business name, an NPI, and/or a license number against the Texas HHSC Office of Inspector General (OIG) Medicaid Provider Exclusions Database — the state-level counterpart to the federal HHS OIG LEIE (see the leie pack) for Texas specifically, and the sibling of ny_omig_check_exclusion (New York) and ca_medical_check_exclusion (California). Answers \"is this provider excluded from Texas Medicaid\", \"check this NPI against the Texas exclusions list\", or pre-payment/credentialing screening for a Texas Medicaid provider. An NPI or license-number match is an IDENTIFICATION (both are exact, provider-specific identifiers); a name match — even an exact one — is a CANDIDATE lead only, since this list carries no date of birth to tell same-named providers apart. Every match carries HHSC OIG's own free-text reason (e.g. \"Federal mandated exclusion\", \"Conviction relating to Healthcare Fraud\") and a currently_excluded flag DERIVED from whether the provider has since been reinstated — this dataset covers everyone EVER excluded, not only those currently excluded. Pass npi or license to turn a name lead into an identification. Sourced from the Texas HHSC OIG Exclusions Database File, keyless.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Provider or business name to screen, e.g. \"John Smith\" or \"Acme Pharmacy Corp\". Matched against the provider's individual name and company name, any word order."
+        },
+        "npi": {
+          "type": "string",
+          "description": "The provider's 10-digit NPI, if known. An NPI match is an identification rather than a name lead — always pass it when known."
+        },
+        "license": {
+          "type": "string",
+          "description": "Texas professional license number, if known. A license match is an identification."
+        },
+        "limit": {
+          "type": "number",
+          "description": "Maximum matches to return (default 10, max 50)."
+        }
+      }
+    }
+  },
+  {
+    "name": "tx_medical_exclusion_coverage",
+    "description": "What the Texas HHSC OIG Medicaid Provider Exclusions data covers and how current it is: total exclusions ever recorded, how many are currently excluded vs. reinstated, how many carry an NPI or license number, how many distinct occupations appear, the oldest and newest exclusion dates, and when this pack's copy was captured. Use to check the screening data is fresh enough to rely on before a compliance decision, and to see the one-line notes on the free-text reason field and the ever-vs-currently-excluded distinction. Pass year (e.g. 2025) or start_date/end_date to instead COUNT how many exclusions have an effective date in that year or range, counted over the whole 13,000+ row list, not a page — answers \"how many Texas HHSC OIG exclusions took effect in 2025\". The response names the date field counted (excluded_since / HHSC's StartDate — never added_date, which answers a different question and gives a different number). Sourced from the Texas HHSC OIG Exclusions Database File, keyless.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  }
+]
